@@ -1,32 +1,32 @@
-Package: mardham2
-Version: 0.1
-Date: 2015-02-15
+Package: EpiModelHIVAdol
+Version: 1.0.0
+Date: 2017-04-12
 Type: Package
-Title: Modeling Approaches to Racial Disparities in HIV in Atlanta MSM in
-    EpiModel
-Authors@R: c(person("Samuel M.", "Jenness", role = c("cre", "aut"), email = "sjenness@uw.edu"),
-             person("Emily", "Beylerian", role = "aut", email = "ebey@uw.edu"),
-             person("Steven M.", "Goodreau", role=c("aut"), email="goodeau@uw.edu"))
-Maintainer: Samuel M. Jenness <sjenness@uw.edu>
-Description: EpiModel version of MARDHAM stochastic network modeling project
-    for modeling HIV-1 transmission dynamics among young men who have sex with men
-    (MSM) in Atlanta. This translates and updates the original MARDHAM software
-    into EpiModel modules for greater flexibility and efficiency, and then adds
-    additional features like pre-exposure prophylaxis (PrEP).
-License: GPL-2
+Title: Epidemic Modeling of HIV Transmission among Sexual Minority Adolecent Males
+Authors@R: c(person("Deven T.", "Hamilton", role = c("cre", "aut"), email = "dth2@u.washigton.edu"),
+             person("Steven M.", "Goodreau", role="aut", email="goodeau@uw.edu"),
+             person("Samuel M.", "Jenness", role = "ctb", email =  "samuel.m.jenness@emory.edu"))
+Maintainer: Deven T. Hamilton <dth2@u.washington.edu>
+Description: EpiModelHIVAdol provides extensions and modifications to the EpiModelHIV package to allow for simulating HIV transmission
+  dynamics among ASMM: Adolecent Sexual Minority Males in the United States.
+License: GPL-3
 Depends:
     R (>= 3.2.0),
-    EpiModel (>= 1.2.0),
-    EpiModelHPC
+    EpiModel (>= 1.2.7),
+    ergm (>= 3.5),
+    tergm,
+    tergmLite
 Imports:
     bindata,
-    network (>= 1.11.3),
-    networkDynamic (>= 0.7.1),
-    ergm (>= 3.2.4),
-    tergm (>= 3.2.4)
+    network,
+    networkDynamic,
+    Rcpp,
+    dplyr
 Suggests:
     knitr,
     testthat
 VignetteBuilder: knitr
-LinkingTo: ergm
+LinkingTo: ergm,
+    Rcpp
 RoxygenNote: 5.0.1
+LazyData: true
