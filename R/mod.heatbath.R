@@ -119,7 +119,7 @@ heatbath.adol <- function(dat, at){
       max(rbinom(infect.new.mat.out.none$AI[infect.new.mat.out.none$ids==x],1,heat.trans),0))   
     
     
-    infect.new.mat.out<-rbind(infect.new.mat.out.l,infect.new.mat.out.m,infect.new.mat.out.h,infect.new.mat.out.none)
+    infect.new.mat.out<-rbind(infect.new.mat.out.n,infect.new.mat.out.l,infect.new.mat.out.m,infect.new.mat.out.h,infect.new.mat.out.none)
     infected<-as.vector(infect.new.mat.out$ids[infect.new.mat.out$infect.new==1])
     }
       
