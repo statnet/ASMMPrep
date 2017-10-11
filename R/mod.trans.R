@@ -134,12 +134,14 @@ trans.mard <- function(dat, at){
   trans.rp.prob[rp.ccr5 == "DW"] <- trans.rp.prob[rp.ccr5 == "DW"] * ccr5.heteroz.rr
 
   # PrEP
+  trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "n")] <-
+            trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "n")] * (1 - pce[1])
   trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "l")] <-
-            trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "l")] * (1 - pce[1])
+            trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "l")] * (1 - pce[2])
   trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "m")] <-
-            trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "m")] * (1 - pce[2])
+            trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "m")] * (1 - pce[3])
   trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "h")] <-
-            trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "h")] * (1 - pce[3])
+            trans.rp.prob[which(rp.prep == 1 & rp.prepcl == "h")] * (1 - pce[4])
 
   # Acute-stage multipliers
   isAcute <- which(rp.stage %in% c("AR", "AF"))
